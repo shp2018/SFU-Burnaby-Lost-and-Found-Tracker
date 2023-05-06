@@ -1,0 +1,35 @@
+
+<app-map></app-map>
+
+
+
+<table>
+    <tr>
+        <th>
+            Reported By
+            <span *ngIf="nameCount%2==1; then down else up"></span> <br>
+            <ng-template #down> <button  (click)="sortbyName()" >  &#9660;</button></ng-template>
+            <ng-template #up> <button  (click)="sortbyName()" > &#9650; </button></ng-template>
+        </th>
+        <th>Time Reported 
+            <span *ngIf="timeCount%2==1; then tdown else tup"></span> <br>
+            <ng-template #tdown> <button (click)="sortbyTime()" >  &#9660;</button></ng-template>
+            <ng-template #tup> <button (click)="sortbyTime()" > &#9650; </button></ng-template>
+        </th>
+        <th>Location: 
+            <span *ngIf="locCount%2==1; then ldown else lup"></span> <br>
+            <ng-template #ldown> <button (click)="sortbyLoc()" >  &#9660;</button></ng-template>
+            <ng-template #lup> <button  (click)="sortbyLoc()" > &#9650; </button></ng-template>
+        </th>
+        <th> Status </th>
+        <th>     </th>
+        <th>     </th>
+      </tr>
+</table>
+
+<app-item
+    *ngFor="let p of item"
+    [item]="p"
+    (delete) = "onItemDelete($event)"
+></app-item>
+<a id = "addButton" href="/add">Submit Lost Item </a>

@@ -1,0 +1,41 @@
+
+
+    <table>
+  
+    <tr>
+      <td>{{item.name}}</td> 
+      <td>{{ item.time | date:'yyyy-MMM-d (h:mm a)' }} </td>
+      <td>{{item.loc}} </td>
+      <td>{{item.status}}</td>
+
+        <td> <button id="info" class="open-button"
+          (click)="onInfo($event,item.pid)"
+          >
+          
+          <img id = "infoIcon" src="assets/info.png" alt="info icon">
+
+          <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+              <span id = "popinfo">
+                
+              </span>
+             
+              <button class="btn cancel" (click)="closeForm($event,item.pid)">Close</button>
+            </form>
+          </div>
+        </button>
+        
+          <button 
+          id="delete"
+          (click)="onDelete($event,item.pid)"
+          ><img id = "deleteIcon" src="assets/trash.png" alt="delete icon"></button> 
+          <button 
+          id="statusChange"
+          (click)="onChangeStatus($event,item.pid)"
+          >Change Status</button>
+        </td>
+       
+    
+  </tr>
+  </table>
+

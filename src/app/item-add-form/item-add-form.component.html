@@ -1,0 +1,37 @@
+<form id="addForm"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(form.value)"
+>
+    <fieldset>
+        <legend id = "formTitle">Submit New Lost Item</legend>
+        <input name="name" type="text" placeholder="Reporter Name" formControlName="name"> 
+        <br>
+        <input name="pnumber" type="text" placeholder="Reporter Phone Number" formControlName="pnumber" > 
+        <br>
+        <p id="choose"> Select status: READY FOR PICKUP to confirm the item is ready for pickup </p>
+        <select name="status" id="status" formControlName="status">
+            <option selected value="READY FOR PICKUP">READY FOR PICKUP</option>
+        </select>
+        <br>
+        <input name="pid" type="text" placeholder="Enter Lost Item ID" formControlName="pid">
+        <br>
+
+       <p id="choose"> Choose from Existing Location from Select below or Add New Location </p>
+        <select name="location" id="loc" formControlName="loc">
+            <option *ngFor="let location of locations"> {{location}}</option>
+        </select>
+        <br>
+        <input name="loc" type="text" placeholder="Enter Location" formControlName="loc">
+        <br>
+      
+        <input name="breed" type="text" placeholder="Enter Lost Item Type" formControlName="breed">
+        <br>
+        
+        <input name="lat" type="number" placeholder="Enter Latitude " formControlName="lat">
+        <input name="long" type="number" placeholder="Enter Longitude " formControlName="long">
+        <br>
+        <input name="notes" type="text" placeholder="Extra Information" formControlName="notes">
+       <br>
+        <button class="btn btn-outline-primary" >SAVE</button>
+    </fieldset>
+</form>

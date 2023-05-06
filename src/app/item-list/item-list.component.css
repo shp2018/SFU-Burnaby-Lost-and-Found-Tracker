@@ -1,0 +1,40 @@
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    width:300px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+.a{
+    border: 50px solid;
+    border-color: white white blue white;
+    position:absolute;
+    top: 0;
+    left: 100px;
+    width: 0px;
+    padding: 0;
+}
+
+#addButton{
+    margin-top: 20px;
+    width:100%;
+    background-color: aliceblue;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    top:10px;
+    left:560px;
+    font-family: Arial Rounded MT Bold;
+}
